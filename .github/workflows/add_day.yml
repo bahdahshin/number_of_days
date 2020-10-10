@@ -13,5 +13,14 @@ jobs:
     - run: echo -n -e "HELLO\n !\n World!"
     - run: cat README.md
     - run: echo $(($(cat README.md) + 1)) > README.md
-    - run: git 
-      
+    - run: cat README.md
+    - uses: EndBug/add-and-commit@v5
+      with:
+        add: 'README.md'
+        author_name: Bahdah Shin
+        author_email: bahdahdev@gmail.com
+        branch: main
+        cwd: '.'
+        message: 'Commit $(cat README.md)'
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
