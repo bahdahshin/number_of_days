@@ -21,6 +21,6 @@ jobs:
         author_email: bahdahdev@gmail.com
         branch: main
         cwd: '.'
-        message: 'Commit $(cat README.md)'
+        message: 'adding one'
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
